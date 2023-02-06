@@ -5,7 +5,6 @@ export const authSlice = createSlice({
     initialState: false,
     reducers: {
         setAuth: (state) => {
-            console.log(state);
             return state = !state;
         }
     }
