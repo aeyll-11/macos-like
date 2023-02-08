@@ -2,17 +2,19 @@ import React, { ReactElement } from 'react';
 import { RootState } from "@/store/store";
 import { useDispatch, useSelector } from "react-redux";
 import { setAuth } from '@/store/authReducer';
+import { Login } from './login';
 export const Main = (): ReactElement => {
     const auth = useSelector((state: RootState) => state.auth);
-    
     const dispatch = useDispatch();
 
     const lockUnlock = () => {
         dispatch(setAuth());
     }
+
     return (
-        <div>
-            <button onClick={lockUnlock}>Login</button>
+        <div className='flex h-[100vh] bg-wallpaper bg-cover bg-center bg-no-repeat relative'>
+            <Login/>
+            <button onClick={lockUnlock}>Lock</button>
         </div>
     );
 }
