@@ -55,9 +55,9 @@ export const Login = (): ReactElement => {
     if(auth) {
         return (
             <div onClick={() => login.showButton == false ? dispatch(setShowButton(true)) : {}}
-                className="z-50 absolute flex flex-col justify-center items-center h-full w-full text-white bg-wallpaper bg-cover bg-center bg-no-repeat">
+                className="z-40 absolute flex flex-col justify-center items-center h-full w-full text-white bg-wallpaper bg-cover bg-center bg-no-repeat">
                 <div className="flex w-[10em] h-[10em] rounded-full bg-avatar m-10">
-                    <Image src="/avatar.png" width={80} height={80} alt="avatar" className="object-contain m-auto"/>
+                    <Image src="/avatar.png" width={80} height={80} style={{width: 100, height: 130}} alt="avatar" className="object-contain m-auto h-auto"/>
                 </div>
                 <div className="font-bold text-2xl text-shadow">{user.firstName + ' ' + user.lastName} </div>
                 {
