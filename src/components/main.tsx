@@ -2,7 +2,9 @@ import React, { ReactElement } from 'react';
 import { RootState } from "@/store/store";
 import { useDispatch, useSelector } from "react-redux";
 import { setAuth } from '@/store/authReducer';
+
 import { Login } from './login';
+import { TopBar } from './layout/topBar';
 export const Main = (): ReactElement => {
     const auth = useSelector((state: RootState) => state.auth);
     const dispatch = useDispatch();
@@ -13,6 +15,7 @@ export const Main = (): ReactElement => {
 
     return (
         <div className='flex h-[100vh] bg-wallpaper bg-cover bg-center bg-no-repeat relative'>
+            <TopBar/>
             <Login/>
             <button onClick={lockUnlock}>Lock</button>
         </div>
