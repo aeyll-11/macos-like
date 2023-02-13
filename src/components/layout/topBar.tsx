@@ -54,7 +54,7 @@ export const TopBar = () => {
             </div>
             <div className="h-[0.8rem] mx-1 w-6 border border-white border-opacity-50 p-[1px] rounded-[4px]">
                 <div style={{width: batteryLevel + '%'}} className='relative h-full bg-white bg-opacity-90 rounded-[3px]'>
-                    <div className="absolute bg-white bg-opacity-50 h-[4px] w-[1.8px] rounded-r-full right-[-16px] top-[2.5px]"></div>
+                    <div className="absolute bg-white bg-opacity-50 h-[4px] w-[1.8px] rounded-r-full right-[-21px] top-[2.5px]"></div>
                 </div>
             </div>
             <span className="m-2">{date}</span>
