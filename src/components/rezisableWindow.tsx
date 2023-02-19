@@ -10,9 +10,8 @@ export const ResizableWindows = ({children}: Props) => {
     const [prevMousePosition, setPrevMousePosition] = useState<{x: number, y: number}>();
     const [divPosition, setDivPosition] = useState<{x: number, y: number}>({x:50,y: 50});
 
-    const handleMouseClick: MouseEventHandler<HTMLDivElement>  = (event) => {
+    const handleMouseClick = (event:any) => {
         const currentMousePosition = {x: event.clientX, y: event.clientY};
-        
         if(prevMousePosition == undefined) {
             setPrevMousePosition(currentMousePosition);
         }
@@ -23,17 +22,24 @@ export const ResizableWindows = ({children}: Props) => {
             setPrevMousePosition(currentMousePosition);
         }
     }
+
     return(
         <div 
             ref={resizableWindowRef}
             style={divPosition ? {top:`${divPosition.y}px`, left:`${divPosition.x}px`}: {}} 
-            className="absolute h-5/6 w-5/6 top-10 border border-1 border-white rounded-md resizableWindow"
+            className="absolute h-5/6 w-5/6 top-10 border-[0.5px] border-white border-opacity-50 rounded-md resizableWindow"
             >
             <div
-                draggable
                 ref={barRef}
+                draggable
                 onDragOver={handleMouseClick}
-                className="h-6 w-full bg-[#3b4042]">
+                className="h-6 w-full bg-[#3b4042] rounded-t-lg">
+                    <div className="flex w-1/6 h-full items-center px-2">
+                        <div className="rounded-full h-[12px] w-[12px] bg-[#fe5f57]">
+                        </div>
+                        <div className="rounded-full h-[12px] ml-1 w-[12px] bg-[#575b5e]"></div>
+                        <div className="rounded-full h-[12px] ml-1 w-[12px] bg-[#575b5e]"></div>
+                    </div>
             </div>
             {children}
         </div>

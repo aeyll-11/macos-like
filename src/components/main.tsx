@@ -6,6 +6,7 @@ import { setAuth } from '@/store/authReducer';
 import { Login } from './login';
 import { TopBar } from './layout/topBar';
 import { ResizableWindows } from './rezisableWindow';
+import { GoogleWindows } from './google';
 export const Main = (): ReactElement => {
     const auth = useSelector((state: RootState) => state.auth);
     const dispatch = useDispatch();
@@ -18,8 +19,7 @@ export const Main = (): ReactElement => {
         <div className='flex h-[100vh] bg-wallpaper bg-cover bg-center bg-no-repeat relative'>
             <TopBar/>
             <Login/>
-            <ResizableWindows>
-            </ResizableWindows>
+            <GoogleWindows/>
             <button onClick={lockUnlock}>Lock</button>
         </div>
     );

@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import { Docker } from '@/components/layout/docker';
 import { Main } from '@/components/main';
 export default function Home() {
+  
   return (
     <>
       <Head>
